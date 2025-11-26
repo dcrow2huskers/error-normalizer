@@ -217,5 +217,5 @@ error-normalizer/
 
 ## Acknowledgements
 
-This app was built using Jaded AI's open-source EasyOCR, Streamlit, and Ollama's open-source LLaVA vision and text large language model.
+This app was built using open-source tools including EasyOCR, Streamlit, and Ollama’s LLaVA vision-language model.
 ---
