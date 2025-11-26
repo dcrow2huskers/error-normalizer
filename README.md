@@ -33,6 +33,7 @@ Use newer versions at your own discretion.
 
 1. **Download Ollama:**  
    https://ollama.com/download
+
    (macOS users may also install via Homebrew:)
    ```bash
    brew install ollama
@@ -51,12 +52,13 @@ Use newer versions at your own discretion.
    ```
    Make sure the terminal is open in the background and ollama is running the LLaVA model while using ERror Normalizer.
 
-> Note: The app may run LLaVA on your device automatically after initial Ollama setup.
-
-  Don't forget to stop the model after you are done using the app.
+   Don't forget to stop the model after you are done using the app.
    ```bash
    ollama stop llava
    ```
+
+> Note: The app may run LLaVA on your device automatically after initial Ollama setup.
+
 
 ---
 
