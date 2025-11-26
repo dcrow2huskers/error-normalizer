@@ -1,8 +1,10 @@
-# 🍌 Error Normalizer
+# ⚙️ ERror Normalizer
 
-**Error Normalizer** is an interactive, local-first tool for validating database diagrams. Using OCR and vision-based AI (LLaVA), it grades Entity Relationship Diagrams (ERDs) and identifies structural mistakes, naming issues, and logic problems.
+**ERror Normalizer** is an interactive, local-first tool for validating database diagrams. Using OCR and vision-based AI (LLaVA), it grades and scores Entity Relationship Diagrams (ERDs) and identifies structural mistakes, naming issues, and logic problems.
 
 Upload a diagram, and the system behaves like a **Senior Database Engineer** providing detailed feedback.
+
+<img width="3024" height="1674" alt="CleanShot 2025-11-26 at 10 39 35@2x" src="https://github.com/user-attachments/assets/596bff5c-4327-41c9-bf86-df717fea3c1c" />
 
 ---
 
@@ -13,13 +15,13 @@ Upload a diagram, and the system behaves like a **Senior Database Engineer** pro
   - **Vision (LLaVA):** Understands structural layout, flow, and cardinality.
   - **Extraction Mode:** Generates a strict JSON-style inventory of entities and relationships.
 - **Visual Grading**
-  - Produces a 0–100 “Health Score.”
-  - Uses shields and sirens for visual clarity.
+  - Produces a 0–100 “Diagram Consistency Score.”
+  - Provides a text rating of *excellent condition*, *needs improvement*, or *critical issues*.
 - **Detailed Feedback**
   - Color-coded cards for **Issues** (red), **Suggestions** (green), and **Structural Data** (blue).
 - **100% Local**
   - All AI processing runs on your machine using **Ollama**.  
-  - No uploads. No cloud. No privacy concerns.
+  - No data collection, cloud, or privacy concerns.
 
 ---
 
@@ -29,14 +31,23 @@ Before running the application, install and run **Ollama**, which provides the v
 
 1. **Download Ollama:**  
    https://ollama.com/download
+  (macOS users may also install via Homebrew:)
+  ```bash
+  brew install ollama
+  ```
+  On MacOS, the Ollama app may launch, but you do not need to use the window. You may close it as the service runs in the background.
 
-2. **Pull the Vision Model:**
+3. **Pull the Vision Model:**
+  After installing Ollama, in terminal or powershell
    ```bash
    ollama pull llava
    ```
 
-3. **Keep Ollama Running:**  
-   Make sure the Ollama app is open in the background while using Error Normalizer.
+3. **Run LlaVA:**
+   ```bash
+   ollama run llava
+   ```
+   Make sure the terminal is open in the background and ollama is running the LLaVA model while using ERror Normalizer.
 
 ---
 
@@ -44,9 +55,17 @@ Before running the application, install and run **Ollama**, which provides the v
 
 ### 1. Clone or Download the Project
 
-Place the project folder where you want it on your machine.
+Clone or download and unzip the project folder where you want it on your machine. 
 
-### 2. Set Up a Virtual Environment
+### 2. Navigate Into the Project Directory
+
+Before creating your virtual environment, make sure you are inside the project folder:
+```bash
+cd error-normalizer
+```
+(You can also open this project in VSCode and skip the virtual environment by using the built-in terminal).
+
+### 3. Set Up a Virtual Environment
 
 **macOS / Linux**
 ```bash
@@ -60,7 +79,7 @@ python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -74,10 +93,8 @@ pip install -r requirements.txt
 Start the Streamlit app with:
 
 ```bash
-streamlit run Home.py
+streamlit run app.py
 ```
-
-(If your entry file has a different name, update the command accordingly.)
 
 ---
 
@@ -85,46 +102,14 @@ streamlit run Home.py
 
 ```
 error-normalizer/
-├── Home.py              # Main entry page
+├── app.py              # Main home page
 ├── requirements.txt
 ├── README.md
+├── logos/              # Where brand svgs are stored
+├── .streamlit/         # Site config file
 └── pages/
     ├── upload.py        # File upload & method selection
     └── results.py       # OCR/AI analysis results
-```
-
----
-
-## 🏠 Example Home.py
-
-```python
-import streamlit as st
-
-st.set_page_config(
-    page_title="Error Normalizer",
-    page_icon="🍌",
-    layout="centered"
-)
-
-st.title("🍌 Error Normalizer")
-
-st.markdown("""
-### Welcome to your AI Diagram Validator
-
-This tool analyzes Entity Relationship Diagrams (ERDs) using:
-- **Ollama (LLaVA)** for visual reasoning  
-- **EasyOCR** for text extraction  
-- **LLM analysis** for grading structure, naming, and logic
-
-#### How to Use:
-1. Ensure **Ollama** is running in the background.
-2. Navigate to the **Upload** page.
-3. Drop in your diagram.
-4. Review the AI-generated critique.
-""")
-
-if st.button("Start Validating"):
-    st.switch_page("pages/upload.py")
 ```
 
 ---
@@ -142,8 +127,5 @@ if st.button("Start Validating"):
 - This is a Streamlit race condition with `st.file_uploader`.
 - Refreshing the page typically resolves it.
 
-### ⚙️ EasyOCR Errors (Windows)
-- Install **Visual Studio Build Tools**  
-  → Choose **Desktop Development with C++** workload.
 
 ---
