@@ -1,0 +1,13 @@
+[theme]
+primaryColor = "#6366f1"      # black
+secondaryBackgroundColor = "#4c1d95"   # purple
+backgroundColor = "#000000"
+textColor = "#ffffff"
+
+[client]
+showErrorDetails = "none"
+toolbarMode = "minimal"
+showSidebarNavigation = false
+
+[ui]
+hideTopBar = true
