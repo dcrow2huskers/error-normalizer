@@ -28,6 +28,7 @@ Upload a diagram, and the system behaves like a **Senior Database Engineer** pro
 ## 🛠️ Prerequisites
 
 Before running the application, install and run **Ollama**, which provides the vision model used by the system.
+This project uses Python version 3.9.6, use other versions at your own discretion.
 
 1. **Download Ollama:**  
    https://ollama.com/download
@@ -115,10 +116,9 @@ The home page provides a little information about the app and its usage.
 Click the 'Try it' button to navigate to the upload page.
 
 ### 2. Upload Your ERD
-Supported image formats:
+Supported image formats (200 MB limit):
 - PNG  
 - JPG / JPEG  
-- SVG (rasterized automatically)
 
 **Recommended input:**  
 A clean, high-resolution screenshot or export of your diagram (Lucidchart, Draw.io, Canva, etc.). Sample ERD images online also work. The OCR method works best with very clear text in the image.
@@ -173,6 +173,9 @@ Examples of diagrams that work well:
 - Canva ERD templates  
 - UML-style diagrams  
 - Hand-drawn ERDs (OCR pipeline recommended)
+- PNG, JPG, or JPEG format
+
+<img width="3022" height="2686" alt="CleanShot 2025-11-26 at 11 40 11@2x" src="https://github.com/user-attachments/assets/acfb1270-6f03-486e-8b62-c777f71cba2b" />
 
 **Try to include:**
 - Entity boxes with clear names  
@@ -191,7 +194,10 @@ Error Normalizer will produce:
 - **Detected relationships + cardinality guesses**  
 - **Naming issues** (pluralization, inconsistent casing, unclear wording)  
 - **Schema structure problems** (missing identifiers, improper M:N linking, etc.)  
-- **LLM-interpreted suggestions or summary of improvements**  
+- **LLM-interpreted suggestions or summary of improvements**
+- **Raw OCR TEXT** (for OCR analysis method)
+
+<img width="3020" height="2654" alt="CleanShot 2025-11-26 at 11 44 15@2x" src="https://github.com/user-attachments/assets/f5d4713c-ff4b-4ae6-9807-5d434863d8f1" />
 
 ---
 
@@ -209,4 +215,7 @@ error-normalizer/
     └── results.py       # OCR/AI analysis results
 ```
 
+## Acknowledgements
+
+This app was built using Jaded AI's open-source EasyOCR, Streamlit, and Ollama's open-source LLaVA vision and text large language model.
 ---
