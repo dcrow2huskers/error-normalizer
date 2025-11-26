@@ -34,7 +34,7 @@ Use newer versions at your own discretion.
 1. **Download Ollama:**  
    https://ollama.com/download
 
-   (macOS users may also install via Homebrew:)
+   macOS users may also install via Homebrew:
    ```bash
    brew install ollama
    ```
