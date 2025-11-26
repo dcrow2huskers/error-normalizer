@@ -260,8 +260,17 @@ def analyze_diagram_with_llava(image: Image.Image) -> Dict[str, Any]:
         resp.raise_for_status()
         text = resp.json().get("message", {}).get("content", "").strip()
         score = parse_score_from_text(text)
+    except requests.exceptions.ConnectionError:
+        text = (
+            "## ⚠️ Connection Error\n"
+            "Could not connect to **Ollama**.\n\n"
+            "**How to fix:**\n"
+            "- Make sure the Ollama llava model is running.\n"
+            "- Ensure you have pulled the model using `ollama pull llava`."
+        )
+        score = None
     except Exception as e:
-        text = f"Error calling LLaVA: {e}"
+        text = f"## ⚠️ System Error\nError calling LLaVA: {e}"
         score = None
 
     return {"summary": text, "raw_output": text, "score": score}
@@ -314,8 +323,17 @@ def extract_with_llava(image: Image.Image) -> Dict[str, Any]:
         resp.raise_for_status()
         text = resp.json().get("message", {}).get("content", "").strip()
         score = parse_score_from_text(text)
+    except requests.exceptions.ConnectionError:
+        text = (
+            "## ⚠️ Connection Error\n"
+            "Could not connect to **Ollama**.\n\n"
+            "**How to fix:**\n"
+            "- Make sure the Ollama llava model is running.\n"
+            "- Ensure you have pulled the model using `ollama pull llava`."
+        )
+        score = None
     except Exception as e:
-        text = f"Error calling LLaVA: {e}"
+        text = f"## ⚠️ System Error\nError calling LLaVA: {e}"
         score = None
 
     return {"summary": text, "raw_output": text, "score": score, "entities": [], "relationships": []}
@@ -396,8 +414,17 @@ def analyze_ocr_with_llava(ocr_payload: Dict[str, Any]) -> Dict[str, Any]:
         data = resp.json()
         text = data.get("message", {}).get("content", "").strip()
         score = parse_score_from_text(text)
+    except requests.exceptions.ConnectionError:
+        text = (
+            "## ⚠️ Connection Error\n"
+            "Could not connect to **Ollama**.\n\n"
+            "**How to fix:**\n"
+            "- Make sure the Ollama llava model is running.\n"
+            "- Ensure you have pulled the model using `ollama pull llava`."
+        )
+        score = None
     except Exception as e:
-        text = f"Error calling LLaVA: {e}"
+        text = f"## ⚠️ System Error\nError calling LLaVA: {e}"
         score = None
 
     return {
