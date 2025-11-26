@@ -28,7 +28,8 @@ Upload a diagram, and the system behaves like a **Senior Database Engineer** pro
 ## 🛠️ Prerequisites
 
 Before running the application, install and run **Ollama**, which provides the vision model used by the system.
-This project uses Python version 3.9.6, use other versions at your own discretion.
+This project was developed and tested with Python version 3.9.6. Other Python 3.9.x versions should work.
+Use newer versions at your own discretion.
 
 1. **Download Ollama:**  
    https://ollama.com/download
@@ -36,7 +37,7 @@ This project uses Python version 3.9.6, use other versions at your own discretio
    ```bash
    brew install ollama
    ```
-  On MacOS, the Ollama app may launch, but you do not need to use the window. You may close it as the service runs in the background.
+> Note: On MacOS, the Ollama app may launch, but you do not need to use the window. You may close it as the service runs in the background.
 
 3. **Pull the Vision Model:**
   After installing Ollama, in terminal or powershell
@@ -44,12 +45,15 @@ This project uses Python version 3.9.6, use other versions at your own discretio
    ollama pull llava
    ```
 
-3. **Run LlaVA:**
+4. **Run LlaVA:**
    ```bash
    ollama run llava
    ```
    Make sure the terminal is open in the background and ollama is running the LLaVA model while using ERror Normalizer.
-   The app may run llava on your device automatically. Don't forget to stop the model after you are done using the app.
+
+> Note: The app may run LLaVA on your device automatically after initial Ollama setup.
+
+  Don't forget to stop the model after you are done using the app.
    ```bash
    ollama stop llava
    ```
@@ -68,7 +72,7 @@ Before creating your virtual environment, make sure you are inside the project f
 ```bash
 cd error-normalizer
 ```
-(You can also open this project in VSCode and skip the virtual environment by using the built-in terminal).
+> Note: You can also open this project in VSCode and skip the virtual environment by using the built-in terminal. Using a virtual environment is recommended but optional.
 
 ### 3. Set Up a Virtual Environment
 
@@ -95,7 +99,7 @@ pip install -r requirements.txt
 
 ## 🚀 Running the App
 
-Please double-check you have followed the steps for prequisite and installation carefully.
+Make sure you have carefully completed the prerequisite and installation steps above.
 
 Start the Streamlit app with:
 
@@ -106,7 +110,7 @@ streamlit run app.py
 ---
 ---
 
-## 🧪 How to Use Error Normalizer
+## 🧪 How to Use ERror Normalizer
 
 Once the Streamlit app is running in your browser, follow these steps:
 
@@ -215,7 +219,10 @@ error-normalizer/
     └── results.py       # OCR/AI analysis results
 ```
 
+---
+
 ## Acknowledgements
 
-This app was built using open-source tools including EasyOCR, Streamlit, and Ollama’s LLaVA vision-language model.
+Built with open-source technologies: EasyOCR, Streamlit, and Ollama’s LLaVA vision-language model.
+
 ---
