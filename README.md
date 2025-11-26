@@ -140,21 +140,21 @@ Explanations for each mode are also available on the site. You can try all three
 ### 4. View Output & Scoring
 The results page displays:
 
-#### **Diagram Score (0–100)**
-A weighted evaluation of naming consistency, structural correctness, attribute usage, and schema clarity.
+- #### **Diagram Score (0–100)**
+  A weighted evaluation of naming consistency, structural correctness, attribute usage, and schema clarity.
 
-#### **Text Rating**
-- **Excellent Condition**  
-- **Needs Improvement**  
-- **Critical Issues**
+- #### **Text Rating**
+  - **Excellent Condition**  
+  - **Needs Improvement**  
+  - **Critical Issues**
 
-#### **Issue Cards**
-The analysis will provide a variety of cards with different information about the ERD. The first card is a general overview of the diagram and the subsequent cards are color-coded for their appropriate information.
-Red = structural errors  
-Green = suggestions / optimization  
-Blue = extracted metadata (entities, attributes, relationships)
+- #### **Issue Cards**
+  The analysis will provide a variety of cards with different information about the ERD. The first card is a general overview of the diagram and the subsequent cards are color-coded for their appropriate information.
+  Red = structural errors  
+  Green = suggestions / optimization  
+  Blue = extracted metadata (entities, attributes, relationships)
 
-The raw OCR text is also available if you want to see what the engine was able to extract.
+The raw OCR text is also available in the OCR analysis method if you want to see what the engine was able to extract.
 
 ### 5. Run Again
 The results page provides a button for you to go back to the upload page and re-run with a different analysis mode or different ERD without restarting the app.
