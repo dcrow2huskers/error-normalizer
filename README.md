@@ -168,6 +168,33 @@ The results page provides a button for you to go back to the upload page and re-
 ### 6. Troubleshooting
 The app is designed to have excellent error handling and user experience. Most potential errors are small and can be fixed with a page refresh as it re-runs the script. If there are any critical errors, please reach out to the team.
 
+#### macOS SSL Certificate Issue (EasyOCR Download Error)
+
+Some macOS users may encounter an SSL error on first launch indicating that certificate verification failed. This occurs because Python on macOS does not include system SSL certificates by default, which EasyOCR requires when downloading its model files.
+
+#### Fix
+
+Run the following macOS command to install the missing certificates:
+```bash
+  /Applications/Python\ 3.12/Install\ Certificates.command
+   ```
+
+After running it:
+1. Close and reopen your terminal  
+2. Restart your virtual environment
+   ```bash
+   deactivate
+   source venv/bin/activate
+   ```
+4. Re-run the application
+   ```bash
+   streamlit run app.py
+   ```
+
+#### Why This Happens
+
+macOS Python distributions do not bundle SSL certificates. When EasyOCR attempts to download model files, SSL verification fails unless certificates are manually installed.
+
 ---
 
 ## ✔️ Expected Input Examples
