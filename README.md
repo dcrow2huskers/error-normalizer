@@ -109,7 +109,8 @@ Start the Streamlit app with:
 streamlit run app.py
 ```
 
----
+> Note: On first run, you may be prompted in your terminal for an email. In this case, simply leave the field blank and hit enter. 
+
 ---
 
 ## 🧪 How to Use ERror Normalizer
