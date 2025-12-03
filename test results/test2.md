@@ -1,5 +1,5 @@
 # Test 2
-## Input with Analysis Method: LLaVA (Extraction Focused) <img width="640" height="829" alt="Screenshot 2025-12-03 at 11 45 53 AM" src="https://github.com/user-attachments/assets/46d52ef5-e5f7-4d1d-922a-a89ab25ee246" />
+## Input with Analysis Method: LLaVA extraction (entities and relationships) <img width="640" height="829" alt="Screenshot 2025-12-03 at 11 45 53 AM" src="https://github.com/user-attachments/assets/46d52ef5-e5f7-4d1d-922a-a89ab25ee246" />
 
 
 ## Output
